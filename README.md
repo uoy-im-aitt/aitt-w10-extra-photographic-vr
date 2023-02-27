@@ -62,4 +62,47 @@ Finally, in order to make the sound appear as if it’s coming from a particular
 
 Once you’ve done all of this, play your scene in the editor to hear if you sound is coming from the right place. You’ll need to wear stereo headphones to hear the effect (some basic ear buds will be sufficient). You’ll know it’s working if you can hear the sound more loudly in the headphone that’s closest/facing the intended position.
 
+## Task 4: Making Audio Properly Spatial
 
+You’ll recall from the lecture that Unity’s ‘out of the box’ 3D audio support doesn’t support particularly advanced audio spatialization. As a result, you'll be unable to tell whether the sound is in front or behind you – as it’ll sound the same when you face toward and away from it.
+
+To fix this, we can use Oculus’s Spatializer Plugin to enable spatial audio that uses some of the techniques discussed in the lecture to resolve the ambiguity. Download the Oculus Spatializer Unity package from the following link, and add it to your project:
+
+https://developer.oculus.com/downloads/package/oculus-spatializer-unity/
+
+Now turn on spatial audio by following these steps:
+
+1. Go to your project’s audio settings (```Edit > Project Settings > Audio```)
+2. Choose ```OculusSpatializer``` from the Spatializer Plugin drop down
+3. A new ```Spatialize``` checkbox should appear in your Audio Source's inspector – check it
+
+Now run your scene again to test if the audio sounds different. The difference may be subtle, especially if your headphones aren’t high quality. If you’re having trouble discerning the difference, try replacing your sound with a “white noise” sound file – you can find one in the practical assets folder.
+
+## Task 5: Trigger Audio Based on Gaze
+
+One common use of 360-degree photos is for immersive tours of buildings and environments. For example, these have become a very common solution to allow people to look around houses under Covid-19 restrictions. Often these tours will include audio that is triggered when a user looks at a particular area of the screen.
+
+Your challenge in this final task is to create an imaginary audio tour of the environment represented in your scene. This tour should have a number of spoken audio segments that are played back when the user gazes at a desired area of the scene (e.g. a telescope if you’ve chosen an observatory photo).
+
+The functionality should be as follows:
+
+- Each sound should play when the viewer rests their gaze on it for more than 1 second
+- Each sound should be represented with a visual icon, so the viewer knows that they can look at that point to trigger a piece of audio
+- The visual icon should change in some way once the sound has played
+- No more than one sound should play at once
+- You should record your own sounds ideally, but you could use existing samples if you don’t have a microphone.
+
+Tip: if you’re wondering how to do this, consider looking back at the materials on Ray Casting from MPIE last year as a starting point.
+
+## Optional Extension: Google Cardboard
+
+The scene you’ve created in this practical can quite easily be converted to work with a Google Cardboard viewer. You can find instructions on how to do this below. Be warned: these instructions are quite fiddly and if found that if you don’t follow them to the letter it won’t work!
+
+https://developers.google.com/cardboard/develop/unity/quickstart
+
+Once you’ve followed these instructions, you can simply port your scene to cardboard by:
+
+1. Remove existing camera in the scene (MainCamera)
+2. Replace it with a VR camera rig (```GameObject > XR > Add XR Rig```).
+
+If you have a Google Cardboard (let me know if you'd like to borrow one) your phone will now be a VR headset!
